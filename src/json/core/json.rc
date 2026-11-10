@@ -1,0 +1,35 @@
+#include <winres.h>
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,6,0,0
+ PRODUCTVERSION 2,6,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L         // 0x2L especifica que es un archivo DLL/FLL
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        // 040a04b0 especifica el idioma Español (España) con codificación Unicode
+        BLOCK "040a04b0"
+        BEGIN
+            VALUE "CompanyName",      "EasyFast\0"
+            VALUE "FileDescription",  "Json"
+            VALUE "FileVersion",      "2.6.0.0\0"
+            VALUE "InternalName",     "libjson.dll\0"
+            VALUE "LegalCopyright",   "Copyright (C) 2026 Christian Gutman. Todos los derechos reservados.\0"
+            VALUE "OriginalFilename", "libjson.dll\0"
+            VALUE "ProductName",      "Json\0"
+            VALUE "ProductVersion",   "2.6.0.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x40a, 1200
+    END
+END

@@ -1,0 +1,4 @@
+# Indicar a GitHub que ignore estos lenguajes en las estadísticas
+*.bat linguist-vendored
+CMakeLists.txt linguist-vendored
+*.cmake linguist-vendored

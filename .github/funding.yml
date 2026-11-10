@@ -1,0 +1,7 @@
+# Opción Internacional (Donación única sin suscripción)
+ko_fi: tu_usuario_kofi
+
+# Opciones Personalizadas (Donación única local e internacional alternativa)
+custom:
+  - 'https://mercadopago.com.ar (Argentina - Pesos / Debito)'
+  - 'https://buymeacoffee.com (International - Credit Card / Apple Pay)'
