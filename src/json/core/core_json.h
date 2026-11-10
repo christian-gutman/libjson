@@ -64,40 +64,40 @@ typedef struct {
 // Devuelve una COPIA del string en el path. Liberar con free().
 // Devuelve "" (copia de string vacío, también liberable) si no se encontró
 // o el nodo no es de tipo string.
-char *JsonGetString(const char *json, const char *path);
+CORE_API char *JsonGetString(const char *json, const char *path);
 
-double JsonGetDouble(const char *json, const char *path);
+CORE_API double JsonGetDouble(const char *json, const char *path);
 
 // Devuelve el entero de 64 bits como string (para IDs que exceden precisión
 // de double). Buffer alocado en heap. Liberar con free().
-char *JsonGetInt64(const char *json, const char *path);
+CORE_API char *JsonGetInt64(const char *json, const char *path);
 
-long JsonGetInt(const char *json, const char *path);
+CORE_API long JsonGetInt(const char *json, const char *path);
 
-int JsonGetBool(const char *json, const char *path);
+CORE_API int JsonGetBool(const char *json, const char *path);
 
 // 1 si el path existe y no es JSON null; 0 en cualquier otro caso.
-int JsonHasValue(const char *json, const char *path);
+CORE_API int JsonHasValue(const char *json, const char *path);
 
-int JsonArrayCount(const char *json, const char *path);
+CORE_API int JsonArrayCount(const char *json, const char *path);
 
 // Devuelve un literal ESTÁTICO ("string"|"number"|"object"|"array"|"bool"|
 // "null"|"missing"|"unknown"). NUNCA liberar el resultado.
-const char *JsonGetType(const char *json, const char *path);
+CORE_API const char *JsonGetType(const char *json, const char *path);
 
 // Serializa el sub-árbol en el path como texto JSON. Copia nueva en heap.
 // Liberar con free(). Trunca en 64KB (ver nota en la implementación).
-char *JsonExtractSubNode(const char *json, const char *path);
+CORE_API char *JsonExtractSubNode(const char *json, const char *path);
 
 // Detecta el tipo del valor y lo devuelve en el tipo VFP-nativo más
 // apropiado. Si res.type == DATA_TYPE_CHARACTER, liberar res.value.cVal
 // con JsonVariantFree(&res) -- NO con free() directo.
-DataVariant JsonGetAny(const char *json, const char *path);
+CORE_API DataVariant JsonGetAny(const char *json, const char *path);
 
 // Libera la memoria interna de un DataVariant devuelto por JsonGetAny.
 // Es seguro llamarla siempre, incluso si type no es DATA_TYPE_CHARACTER
 // (en ese caso no hace nada).
-void JsonVariantFree(DataVariant *v);
+CORE_API void JsonVariantFree(DataVariant *v);
 
 //char *CleanSpacesJson(const char *json); 
 
